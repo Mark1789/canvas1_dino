@@ -199,24 +199,19 @@ jumpClick.addEventListener('pointerdown',(e) =>  {
 jumpClick.addEventListener('pointerup',(e) =>  {
   e.preventDefault();
   jumpClick.style.transform = 'scale(1, 1)';
-
   jump = false;
 })
 
 // block code pause/play
 let isPaused = false;
 pauseClick.addEventListener('pointerdown', () => {
+  isPaused = !isPaused;
   if (isPaused) {
     resumeAnimation();
   }
   if (!isPaused) {
     pauseAnimation();
   }
-  
-  
-  
-  
-  isPaused = !isPaused;
 })
 function pauseAnimation() {
   window.cancelAnimationFrame(process);
